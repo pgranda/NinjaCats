@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{be0e3c6e-2f8d-40d7-86a8-cc5cfd9dd019}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>make</NMakeBuildCommandLine>
+    <NMakeOutput>$(ProjectName).elf</NMakeOutput>
+    <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>make clean all</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>ARM7;WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(ProjectDir)\include;$(DEVKITARM)\arm-none-eabi\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <IncludePath>$(ProjectDir)include;$(DEVKITARM)\arm-none-eabi\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>make</NMakeBuildCommandLine>
+    <NMakeOutput>$(ProjectName).gba</NMakeOutput>
+    <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>make clean all</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>ARM7;WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(ProjectDir)\include;$(DEVKITPRO)\libgba\include;$(DEVKITARM)\arm-none-eabi\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <IncludePath>$(DEVKITPRO)\libgba\include;$(DEVKITARM)\arm-none-eabi\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="source\BG_Collisions.c" />
+    <ClCompile Include="source\BG_Maps.c" />
+    <ClCompile Include="source\BG_Palette.c" />
+    <ClCompile Include="source\BG_Tiles.c" />
+    <ClCompile Include="source\Emitter.c" />
+    <ClCompile Include="source\gba_mathUtil.c" />
+    <ClCompile Include="source\gba_drawing.c" />
+    <ClCompile Include="source\gba_gfx.c" />
+    <ClCompile Include="source\gba_input.c" />
+    <ClCompile Include="source\gba_math.c" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\ninjacatsprites.c" />
+    <ClCompile Include="source\Utilities.c" />
+    <ClCompile Include="source\Particle.c" />
+    <ClCompile Include="source\sinlut.c" />
+    <ClCompile Include="source\smoke.c" />
+    <ClCompile Include="source\worm.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\BG_Externs.h" />
+    <ClInclude Include="include\Emitter.h" />
+    <ClInclude Include="include\gba.h" />
+    <ClInclude Include="include\gba_drawing.h" />
+    <ClInclude Include="include\gba_gfx.h" />
+    <ClInclude Include="include\gba_input.h" />
+    <ClInclude Include="include\gba_math.h" />
+    <ClInclude Include="include\gba_mathUtil.h" />
+    <ClInclude Include="include\gba_reg.h" />
+    <ClInclude Include="include\gba_types.h" />
+    <ClInclude Include="include\Intellisense.h" />
+    <ClInclude Include="include\ninjacatsprites.h" />
+    <ClInclude Include="include\Utilities.h" />
+    <ClInclude Include="include\Particle.h" />
+    <ClInclude Include="include\sinlut.h" />
+    <ClInclude Include="include\smoke.h" />
+    <ClInclude Include="include\worm.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Makefile">
+      <FileType>Document</FileType>
+    </Text>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
